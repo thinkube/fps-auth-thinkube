@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fps-auth-thinkube"
+version = "0.1.0"
+description = "Jupyverse authentication plugin for JupyterHub (simplified, no SQLAlchemy)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Thinkube", email = "info@thinkube.io" }
+]
+keywords = ["jupyverse", "jupyter", "jupyterhub", "authentication"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "jupyverse-api>=0.6.0",
+    "jupyterhub>=5.0.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.entry-points."asphalt.components"]
+auth = "fps_auth_thinkube.main:AuthThinkubeComponent"
+
+[project.urls]
+Homepage = "https://github.com/thinkube/fps-auth-thinkube"
+Repository = "https://github.com/thinkube/fps-auth-thinkube"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fps_auth_thinkube"]
