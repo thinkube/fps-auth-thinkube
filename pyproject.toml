@@ -42,4 +42,4 @@ Homepage = "https://github.com/thinkube/fps-auth-thinkube"
 Repository = "https://github.com/thinkube/fps-auth-thinkube"
 
 [tool.hatch.build.targets.wheel]
-packages = ["fps_auth_thinkube"]
+packages = ["fps_auth_thinkube", "fps_auth_jupyterhub"]
